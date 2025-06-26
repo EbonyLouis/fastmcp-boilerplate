@@ -19,7 +19,7 @@ You'll build this project step-by-step in the workshop!
 Clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/ebonyl/dog-mcp.git
+git clone https://github.com/EbonyLouis/fastmcp-boilerplate.git
 cd dog-mcp
 npm install
 ```
@@ -37,7 +37,7 @@ npm run build
 Then in Goose Desktop, add the extension with:
 
 ```bash
-node /Users/[userdirectory]/meme-mcp/dist/server.js
+node /Users/[userdirectory]/dog-mcp/dist/server.js
 ```
 
 This connects your local server to Goose using the compiled version.
