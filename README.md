@@ -1,74 +1,78 @@
-# FastMCP Boilerplate
+# Dog MCP Server 🐶
 
-A boilerplate for [FastMCP](https://github.com/punkpeye/fastmcp).
+This is a simple MCP server built with [FastMCP](https://github.com/punkpeye/fastmcp) that connects to [Goose](https://github.com/block/goose) and fetches random dog images using the [Dog API](https://dog.ceo/dog-api/).
 
-This boilerplate is a good starting point for building an MCP server. It includes a basic setup for testing, linting, formatting, and publishing to NPM.
+You'll build this project step-by-step in the workshop!
 
-## Development
+---
 
-To get started, clone the repository and install the dependencies.
+## 🛠 Prerequisites
+
+- Node.js v20+
+- npm
+- [Goose Desktop](https://block.github.io/goose/)
+
+---
+
+## 🚀 Setup
+
+Clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/punkpeye/fastmcp-boilerplate.git
-cd fastmcp-boilerplate
+git clone https://github.com/ebonyl/dog-mcp.git
+cd dog-mcp
 npm install
-npm run dev
 ```
 
-> [!NOTE]
-> If you are starting a new project, you may want to fork [fastmcp-boilerplate](https://github.com/punkpeye/fastmcp-boilerplate) and start from there.
+---
 
-### Start the server
+## 🧪 Run it with Goose
 
-If you simply want to start the server, you can use the `start` script.
+After building the project, you can connect it to Goose using:
 
 ```bash
-npm run start
+npm run build
 ```
 
-However, you can also interact with the server using the `dev` script.
+Then in Goose Desktop, add the extension with:
 
 ```bash
-npm run dev
+node /Users/[userdirectory]/meme-mcp/dist/server.js
 ```
 
-This will start the server and allow you to interact with it using CLI.
+This connects your local server to Goose using the compiled version.
 
-### Testing
+---
 
-A good MCP server should have tests. However, you don't need to test the MCP server itself, but rather the tools you implement.
+## 🧑‍💻 During the Workshop
+
+You’ll build and connect the server live by:
+
+1. Writing a tool that fetches a random dog image
+2. Connecting it to Goose
+3. Prompting Goose to try it out
+4. Adding a second tool to fetch dogs by breed
+
+The `server.ts` file starts simple and will be updated live.
+
+---
+
+## 🧼 Scripts
+
+- Build the project (required after each code change if you're using `node dist/server.js`):
 
 ```bash
-npm run test
+npm run build
 ```
+---
 
-In the case of this boilerplate, we only test the implementation of the `add` tool.
+## 👀 Want to explore more?
 
-### Linting
+Check out:
+- [Dog API docs](https://dog.ceo/dog-api/)
+- [FastMCP GitHub](https://github.com/punkpeye/fastmcp)
+- [Goose Open Source Agent](https://github.com/block/goose)
 
-Having a good linting setup reduces the friction for other developers to contribute to your project.
+---
 
-```bash
-npm run lint
-```
-
-This boilerplate uses [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) and [TypeScript ESLint](https://typescript-eslint.io/) to lint the code.
-
-### Formatting
-
-Use `npm run format` to format the code.
-
-```bash
-npm run format
-```
-
-### GitHub Actions
-
-This repository has a GitHub Actions workflow that runs linting, formatting, tests, and publishes package updates to NPM using [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
-
-In order to use this workflow, you need to:
-
-1. Add `NPM_TOKEN` to the repository secrets
-   1. [Create a new automation token](https://www.npmjs.com/settings/punkpeye/tokens/new)
-   2. Add token as `NPM_TOKEN` environment secret (Settings → Secrets and Variables → Actions → "Manage environment secrets" → "release" → Add environment secret)
-1. Grant write access to the workflow (Settings → Actions → General → Workflow permissions → "Read and write permissions")
+🐾 Built with love and dog pics.

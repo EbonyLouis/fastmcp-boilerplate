@@ -25,6 +25,7 @@
   "description": "A boilerplate for FastMCP",
   "dependencies": {
     "fastmcp": "^1.27.3",
+    "node-fetch": "^3.3.2",
     "zod": "^3.24.4"
   },
   "release": {
@@ -41,6 +42,7 @@
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@tsconfig/node22": "^22.0.1",
+    "@types/node-fetch": "^2.6.12",
     "eslint-config-prettier": "^10.1.3",
     "eslint-plugin-perfectionist": "^4.12.3",
     "jiti": "^2.4.2",

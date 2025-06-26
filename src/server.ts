@@ -1,56 +1,108 @@
-import { FastMCP } from "fastmcp";
-import { z } from "zod";
+import { FastMCP } from "fastmcp"; // Main library to create the MCP server
+import { z } from "zod"; // Used to validate inputs
+import fetch from "node-fetch"; // Lets us call external APIs like dog.ceo
 
-import { add } from "./add.js";
-
+// Create a new FastMCP server instance
 const server = new FastMCP({
-  name: "Addition",
-  version: "1.0.0",
+  name: "Dog MCP Server", // The name that Goose will display
+  version: "1.0.0",        // Version of your server
 });
 
-server.addTool({
-  annotations: {
-    openWorldHint: false, // This tool doesn't interact with external systems
-    readOnlyHint: true, // This tool doesn't modify anything
-    title: "Addition",
-  },
-  description: "Add two numbers",
-  execute: async (args) => {
-    return String(add(args.a, args.b));
-  },
-  name: "add",
-  parameters: z.object({
-    a: z.number().describe("The first number"),
-    b: z.number().describe("The second number"),
-  }),
-});
+// ✨ Live coding starts here!
+// We'll add our tools (functions Goose can call) during the workshop.
 
-server.addResource({
-  async load() {
-    return {
-      text: "Example log content",
-    };
-  },
-  mimeType: "text/plain",
-  name: "Application Logs",
-  uri: "file:///logs/app.log",
-});
 
-server.addPrompt({
-  arguments: [
-    {
-      description: "Git diff or description of changes",
-      name: "changes",
-      required: true,
-    },
-  ],
-  description: "Generate a Git commit message",
-  load: async (args) => {
-    return `Generate a concise but descriptive commit message for these changes:\n\n${args.changes}`;
-  },
-  name: "git-commit",
-});
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 🐕 Tool 1: Get a random dog image
+// server.addTool({
+//   name: "randomDog",
+//   description: "Get a random dog image",
+//   annotations: {
+//     title: "Get Dog Pic",
+//     readOnlyHint: true,
+//     openWorldHint: true,
+//   },
+//   parameters: z.object({}), // No parameters needed for this one
+//   execute: async () => {
+//     const res = await fetch("https://dog.ceo/api/breeds/image/random");
+//     const json = (await res.json()) as { message: string };
+//     return json.message; // Just return the image URL
+//   } 
+// });
+
+// 🐶 Tool 2: Get an image of a specific dog breed
+// server.addTool({
+//   name: "dogByBreed",
+//   description: "Get a random image of a specific dog breed",
+//   annotations: {
+//     title: "Get Dog by Breed",
+//     readOnlyHint: true,
+//     openWorldHint: true,
+//   },
+//   parameters: z.object({
+//     breed: z.string().describe("The breed of the dog (e.g., 'husky', 'pug')"),
+//   }),
+//   execute: async ({ breed }) => {
+//     const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+//     const json = (await res.json()) as { message: string; status: string };
+//     return json.message; // Return the image URL for that breed
+//   }
+// });
+
+// Start the server so Goose can connect via stdio
 server.start({
   transportType: "stdio",
 });
