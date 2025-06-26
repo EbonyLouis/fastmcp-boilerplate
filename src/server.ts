@@ -10,7 +10,7 @@ const server = new FastMCP({
 
 // ✨ Live coding starts here!
 // We'll add our tools (functions Goose can call) during the workshop.
-
+// scroll down to the bottom to find the tool code
 
 
 

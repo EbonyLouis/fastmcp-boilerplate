@@ -19,7 +19,7 @@ You'll build this project step-by-step in the workshop!
 Clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/EbonyLouis/fastmcp-boilerplate.git
+git clone https://github.com/EbonyLouis/fastmcp-boilerplate.git dog-mcp
 cd dog-mcp
 npm install
 ```
